@@ -71,3 +71,15 @@ class BasePage:
         except (NoSuchElementException, TimeoutException):
             return False
         return True
+
+    def get_alert_text(self, timeout=5) -> str:
+        """Switch focus of driver to alert.
+        :param timeout: time delay for search the element.
+        :returns: text of the alert message.
+        """
+        alert = wait(self.driver, timeout).until(EC.alert_is_present())
+        try:
+            alert_text = alert.text
+        finally:
+            alert.accept()
+        return alert_text
