@@ -13,3 +13,4 @@ class MainPageLocators(BaseLocators):
     POST_IMAGE = (By.CSS_SELECTOR, 'img')
     POST_TITLE_LOCATOR = (By.XPATH, '//h2[text()="{text}"]')
     POST_CARD = (By.CSS_SELECTOR, '.post')
+    CONTACT_TAB = (By.XPATH, '//a[@href="/contact"]/parent::li')

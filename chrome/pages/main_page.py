@@ -1,4 +1,4 @@
-"""This module represents login page."""
+"""This module represents main page."""
 from chrome.locators.main_page_locators import MainPageLocators
 from chrome.pages.base_page import BasePage
 
@@ -42,5 +42,17 @@ class MainPage(BasePage):
             locator=self.format_locator(
                 locator=self.locators.POST_TITLE_LOCATOR,
                 text=title
+            )
+        )
+
+    def open_contact_us_page(self):
+        self.element_is_clickable(
+            locator=self.locators.CONTACT_TAB
+        ).click()
+
+        self.element_is_visible(
+            locator=self.format_locator(
+                locator=self.locators.XPATH_CONTAINS_DYNAMIC,
+                text='Contact us!'
             )
         )
