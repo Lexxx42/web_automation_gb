@@ -32,7 +32,7 @@ class BasePage:
             return False
         return True
 
-    def element_is_present(self, locator, timeout=5):
+    def element_is_present(self, locator, timeout=15):
         """
         Returns element if it's present in page DOM.
         :param locator: locator of web element.
@@ -40,7 +40,7 @@ class BasePage:
         """
         return wait(self.driver, timeout).until(EC.presence_of_element_located(locator))
 
-    def element_is_clickable(self, locator, timeout=5):
+    def element_is_clickable(self, locator, timeout=15):
         """
         Returns element if it's clickable.
         :param locator: locator of web element.
@@ -49,7 +49,7 @@ class BasePage:
         self.go_to_element(self.element_is_present(locator))
         return wait(self.driver, timeout).until(EC.element_to_be_clickable(locator))
 
-    def element_is_visible(self, locator, timeout=5):
+    def element_is_visible(self, locator, timeout=15):
         """
         Returns element if it's visible.
         :param locator: locator of web element.
@@ -58,7 +58,7 @@ class BasePage:
         self.go_to_element(self.element_is_present(locator))
         return wait(self.driver, timeout).until(EC.visibility_of_element_located(locator))
 
-    def is_element_visible(self, locator, timeout=5) -> bool:
+    def is_element_visible(self, locator, timeout=15) -> bool:
         """
         Check if element is visible.
         :param locator: locator of web element.
@@ -72,7 +72,7 @@ class BasePage:
             return False
         return True
 
-    def get_alert_text(self, timeout=5) -> str:
+    def get_alert_text(self, timeout=15) -> str:
         """Switch focus of driver to alert.
         :param timeout: time delay for search the element.
         :returns: text of the alert message.

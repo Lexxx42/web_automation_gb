@@ -14,3 +14,5 @@ class MainPageLocators(BaseLocators):
     POST_TITLE_LOCATOR = (By.XPATH, '//h2[text()="{text}"]')
     POST_CARD = (By.CSS_SELECTOR, '.post')
     CONTACT_TAB = (By.XPATH, '//a[@href="/contact"]/parent::li')
+    ABOUT_LINK = (By.XPATH, '//a[@href="/about"]')
+    ABOUT_HEADER = (By.XPATH, '//h1[contains(text(), "About Page")]')
