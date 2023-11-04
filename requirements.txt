@@ -3,3 +3,4 @@ PyYAML==6.0.1
 zeep==4.2.1
 pytest==7.4.2
 selenium==4.14.0
+allure-pytest==2.13.2
